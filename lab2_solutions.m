@@ -20,7 +20,7 @@ format long
                         xB = m;
                     elseif f(xB)*f(m) < 0
                         xA = m;
-                    elseif f(xA)*f(m) <= eps || f(xB)*f(m) <= eps
+                    elseif f(xA)*f(m) <= 0 || f(xB)*f(m) <= 0
                         xA = m;
                         xB = m;
                     end

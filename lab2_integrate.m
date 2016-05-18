@@ -1,12 +1,12 @@
 function [retValue] = lab2_integrate(f, a, b, c)
     negative = 0;
     less = 0;
-    numberOfDots = 10000;
+    numberOfDots = 1000;
     xRandVector = (b-a).*rand(numberOfDots,1) + a;
-    yRandVector = f(c).*rand(numberOfDots,1);
+    yRandVector = c.*rand(numberOfDots,1);
     
     
-    if f(c) < 0
+    if c < 0
         negative = 1;
     end
     for i=1:numberOfDots
@@ -16,7 +16,7 @@ function [retValue] = lab2_integrate(f, a, b, c)
             less = less + 1;
         end
     end
-    area = (b-a)*f(c)*less / numberOfDots;
+    area = (b-a)*c*less / numberOfDots;
     retValue = double(area);
 end
 

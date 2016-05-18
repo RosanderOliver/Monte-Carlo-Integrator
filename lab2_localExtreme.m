@@ -31,12 +31,12 @@ function [retVector] = lab2_localExtreme(inVector, f, a, b)
         plot(x, [derivativeF(x); f(x)])
         
         solution = lab2_solutions(derivativeF, I(1), I(2));
-        if isempty(solution) && i == 2
+        if (isempty(solution) && i == 2) && abs(f(I(1))) > abs(f(I(2))
             solution = I(1);
-        elseif isempty(solution) && i == length(inVector)
+        elseif isempty(solution)
             solution = I(2);
         end
-        yValues = [yValues, solution];
+        yValues = [yValues, f(solution)];
     end
     retVector = vpa(yValues);
 end
