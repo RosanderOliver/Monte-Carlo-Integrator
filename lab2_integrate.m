@@ -1,7 +1,7 @@
 function [retValue] = lab2_integrate(f, a, b, c)
     negative = 0;
     less = 0;
-    numberOfDots = 1000;
+    numberOfDots = 10000;
     xRandVector = (b-a).*rand(numberOfDots,1) + a;
     yRandVector = c.*rand(numberOfDots,1);
     

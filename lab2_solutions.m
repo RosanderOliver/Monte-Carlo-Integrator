@@ -1,6 +1,6 @@
-function [retVector] = lab2_solutions(f, a, b)
+function [retVector] = lab2_solutions(f, a, b, numberOfIntervals, precision)
 format long
-    h = (b-a) / 17;
+    h = (b-a) / numberOfIntervals;
     subIntervalA = a;
     subIntervalB = a + h;
     retVector = [];
@@ -14,7 +14,7 @@ format long
             xA = subIntervalA;
             xB = subIntervalB;
             if xB-xA > eps
-                while xB-xA > (eps+20*10^-16)
+                while xB-xA > precision
                     m = (xA+xB)/2;
                     if f(xA)*f(m) < 0
                         xB = m;
